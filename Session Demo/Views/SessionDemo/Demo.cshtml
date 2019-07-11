@@ -1,0 +1,40 @@
+﻿@using Session_Demo.Models
+@model Session_Demo.Models.Employee
+    @{
+        ViewBag.Title = "Demo";
+        Layout = null;
+    }
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+    <input type="hidden" value="" name="tb"/>
+    <input type="submit" value="Go"/>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Des</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        @foreach (Employee emp in ViewBag.Emp)
+        {
+            <tr>
+                <td>@emp.Name</td>
+                <td>@emp.Des</td>
+            </tr>
+
+        }
+        </tbody>
+    </table>
+    <input type="submit" value="Save"/>
+    <input type="submit" value="Delete"/>
+    <label>@ViewBag.Message</label>
+    </body>
+</html>
+
+
